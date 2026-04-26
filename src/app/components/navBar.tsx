@@ -1,9 +1,12 @@
-
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { ClerkProvider, SignIn, SignUp, SignInButton, SignUpButton, Show, UserButton, UserAvatar } from "@clerk/nextjs";
+import { useCartStore } from "@/src/store";
 
 export default function Navbar() {
+    // const useStore = useCartStore();
+
+    // useStore.toggleCart();
     return (
         <header className="w-full  uppercase p-3 flex justify-center bg-[#fdf9ef]">
             <div className="container flex justify-between bg-[#064d4f] py-4 px-8 rounded-lg shadow-lg">
@@ -13,7 +16,14 @@ export default function Navbar() {
                     </div>
 
                     <ul className="flex gap-5 items-center justify-center">
-                        <Link href='Cart'><ShoppingCart size={20} /></Link>
+                        <div className="flex items-center gap-1 cursor-pointer relative">
+                            <ShoppingCart size={20} />
+                            <span className="bg-orange-700 text-[0.7rem] font-extralight rounded-full h-4 w-4 text-center text-white
+                            flex items-center justify-center
+                            absolute left-3 bottom-3">
+                                2
+                            </span>
+                        </div>
                         <Show when="signed-in">
                             <UserButton />
                         </Show>
@@ -30,7 +40,6 @@ export default function Navbar() {
                                 </button>
                             </SignUpButton>
                         </Show>
-
                     </ul>
                 </nav>
             </div>
