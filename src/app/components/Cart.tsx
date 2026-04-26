@@ -30,7 +30,7 @@ export default function Cart() {
                         className="fixed left-0 top-0 w-full h-full bg-black/25 shadow-lg p-4 z-50">
                         <div
                             onClick={(e) => e.stopPropagation()}
-                            className="absolute bg-[#fdf9ef] right-0 top-0 w-1/3 h-screen p-12 overflow-y-scroll">
+                            className="absolute bg-[#fdf9ef] right-0 top-0 w-1/3 h-screen p-12 overflow-y-scroll text-black">
                             <h1>Meu Carrinho</h1>
 
                             {

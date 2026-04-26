@@ -2,6 +2,7 @@ import { ProductType } from "../types/ProductType"
 import  ProductImage  from "./ProductImage"
 import { Star } from "lucide-react"
 import { formatPrice } from "@/src/lib/utils"
+import Button from "./Button";
 
 type ProductProps = {
     product: ProductType
@@ -37,9 +38,7 @@ export default function Product({ product }: ProductProps) {
                         <p className="text-xl text-green-950 font-bold">{formatPrice(product.price)}</p>
                     </div>
 
-                    <button className="bg-green-600 w-full text-sm font-light text-white px-2 py-2 rounded hover:bg-green-700 transition-colors duration-300 cursor-pointer">
-                        Adicionar ao carrinho
-                    </button>
+                        <Button product={product} />
                 </div>
             </div>
 
